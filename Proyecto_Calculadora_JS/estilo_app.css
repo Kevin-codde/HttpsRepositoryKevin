@@ -28,6 +28,8 @@ body{
 .screen{
     background-color: white;
     padding: 30px;
+    width: 300px;
+    margin: 12px;
 }
 .boton{
     height: 100px;
@@ -49,4 +51,8 @@ body{
 
 .content-bton{
     margin: 15px;
+}
+
+b1{
+    color: red;
 }
