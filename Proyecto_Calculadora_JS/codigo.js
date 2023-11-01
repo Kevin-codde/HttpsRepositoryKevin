@@ -25,10 +25,25 @@ function colocarOp(num){
         case 9: pant.value = 9; break
         default: console.log(NaN);
     }
+    
+    
+}
 
-    
-    
-    
+function f_operacion(op){
+    a = 1;
+    b = 2; 
+    switch(op){
+        case '+': resultado = a + b; break 
+        case '-': resultado = a - b; break
+        case '*': resultado = a * b; break
+        case '/': resultado = a / b; break
+    }
+
+   
+}
+
+function mostrar_resultado(){
+    pant.value =  resultado;
 }
 
 boton.addEventListener("click",()=>{
@@ -58,7 +73,13 @@ boton.addEventListener("click",()=>{
      b[7].addEventListener('click',()=>{colocarOp(parseInt(b[7].value))})
      b[8].addEventListener('click',()=>{colocarOp(parseInt(b[8].value))})
      b[9].addEventListener('click',()=>{colocarOp(parseInt(b[9].value))})
-       
+     b[10].addEventListener('click',()=>{f_operacion(b[10].value)});
+     b[11].addEventListener('click',()=>{f_operacion(b[11].value)});
+     b[12].addEventListener('click',()=>{f_operacion(b[12].value)});
+     b[13].addEventListener('click',()=>{f_operacion(b[13].value)});
+     b[14].addEventListener('click',()=>{mostrar_resultado()});
+     
+    
    
 });
 
