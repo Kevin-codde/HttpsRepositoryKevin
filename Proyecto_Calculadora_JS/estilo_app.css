@@ -28,29 +28,43 @@ body{
 .screen{
     background-color: white;
     padding: 30px;
-    width: 300px;
+    width: 444px;
     margin: 12px;
+    border-style: ridge;
+    border-radius: 15px;
+    border-color: beige;
+
 }
 .boton{
     height: 100px;
     width: 100px;
     margin-left: 12px;
+    border-style: ridge;
+    border-radius: 30px;
+}
+
+.boton:hover{
+    border-color: aliceblue;
 }
 
 .cal_content{
     background-color: black;
     display: block;
-    margin-left: 480px;
+    margin-left: 400px;
     border-style:ridge;
-    border-radius: 12px;
+    border-radius: 40px;
     border-color: black;
-    width:30%;
+    width:40%;
+    height: 20%;
     
 
 }
 
 .content-bton{
     margin: 15px;
+    border-style: ridge;
+    border-radius: 30px;
+
 }
 
 b1{
