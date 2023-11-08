@@ -7,6 +7,8 @@ MIERCOLES 25 OCT 2023
 const boton = document.getElementById('btn_on');
 let cont_b = document.querySelector(".content-bton");
 let pant = document.querySelector(".screen");
+let entrada_A = document.querySelector(".ent_A");
+let entrada_B = document.querySelector(".ent_B");
 
 
 botones = [];
@@ -27,11 +29,26 @@ cont_b.innerHTML += botones;
 /*EVENTOS EN BOTONES NUMEROS*/
 
 b = document.querySelectorAll('.boton');
+n = []
+
+cn = 0;
+
 
 for(i=0;i<=9;i++){
     b[i].addEventListener('click',function(){
-        pant.value = this.value;        
-    })
-    
+        pant.value += this.value;
+        entrada_A.value = pant.value[0] 
+        entrada_B.value = pant.value[1] 
+        n[0] = entrada_A.value;
+        n[1] = entrada_B.value;    
+        
+    })  
+   
 }; 
 
+b[14].addEventListener('click',()=>{
+    a = parseFloat(n[0]);
+    b = parseFloat(n[1]);
+    suma = a + b;
+    pant.value = suma;
+})
