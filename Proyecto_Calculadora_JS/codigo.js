@@ -9,6 +9,7 @@ let cont_b = document.querySelector(".content-bton");
 let pant = document.querySelector(".screen");
 let entrada_A = document.querySelector(".ent_A");
 let entrada_B = document.querySelector(".ent_B");
+let entrada_op = document.querySelector(".ent_op");
 
 
 botones = [];
@@ -34,21 +35,56 @@ n = []
 cn = 0;
 
 
-for(i=0;i<=9;i++){
+for(i=0;i<=13;i++){
     b[i].addEventListener('click',function(){
         pant.value += this.value;
         entrada_A.value = pant.value[0] 
-        entrada_B.value = pant.value[1] 
+        entrada_op.value = pant.value[1] 
+        entrada_B.value = pant.value[2] 
         n[0] = entrada_A.value;
-        n[1] = entrada_B.value;    
+        n[1] = entrada_op.value; 
+        n[2] = entrada_B.value;   
+         
         
     })  
    
 }; 
 
-b[14].addEventListener('click',()=>{
+
+
+
+function operar(){
     a = parseFloat(n[0]);
-    b = parseFloat(n[1]);
-    suma = a + b;
-    pant.value = suma;
-})
+    op = n[1];
+    b = parseFloat(n[2]);
+
+    switch(op){
+        
+        case '+' :  pant.value = a + b;
+        break;
+
+        case '-' :  pant.value = a - b ;
+        break;
+
+        case '*' :  pant.value = a * b
+        break
+
+        case '/' :  pant.value = a / b ;
+        break;
+
+        default:  0
+        break
+    }
+
+}
+
+
+/*
+a = parseFloat(n[0]);
+b = parseFloat(n[2]);
+*/
+
+b[14].addEventListener('click',()=>{operar()});
+b[15].addEventListener('click',()=>{
+    pant.value = ''; 
+});

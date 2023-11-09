@@ -70,3 +70,9 @@ body{
 b1{
     color: red;
 }
+
+.screen{
+    font-size: 35px;
+    font-family: monospace;
+    background-color: rgb(80, 255, 74);
+}
