@@ -31,29 +31,48 @@ cont_b.innerHTML += botones;
 
 b = document.querySelectorAll('.boton');
 n = []
-
+ln = [];
 cn = 0;
 
 
 for(i=0;i<=13;i++){
     b[i].addEventListener('click',function(){
         pant.value += this.value;
+        /*
         entrada_A.value = pant.value[0] 
         entrada_op.value = pant.value[1] 
         entrada_B.value = pant.value[2] 
         n[0] = entrada_A.value;
         n[1] = entrada_op.value; 
         n[2] = entrada_B.value;   
-         
+        */       
         
     })  
    
 }; 
 
-
-
-
 function operar(){
+    for(num in pant.value ){
+        if(pant.value[num]!= '+'){
+            ln[num] = pant.value[num];
+        }else{
+            break;
+        }
+        
+    }
+
+    a = ln[0]
+    for(i = 1; i< ln.length;i++){
+          a += ln[i] ;
+    }
+        
+  
+   
+}
+
+
+
+/*function operar(){
     a = parseFloat(n[0]);
     op = n[1];
     b = parseFloat(n[2]);
@@ -77,7 +96,7 @@ function operar(){
     }
 
 }
-
+*/
 
 /*
 a = parseFloat(n[0]);
