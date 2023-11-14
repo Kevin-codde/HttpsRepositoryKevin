@@ -33,6 +33,8 @@ b = document.querySelectorAll('.boton');
 n = []
 ln = [];
 cn = 0;
+ln_B = [];
+signo = [];
 
 
 for(i=0;i<=13;i++){
@@ -53,10 +55,11 @@ for(i=0;i<=13;i++){
 
 function operar(){
     for(num in pant.value ){
-        if(pant.value[num]!= '+'){
+        if(pant.value[num]!= '+' && pant.value[num]!= '-'  && pant.value[num]!= '*'  && pant.value[num]!= '/' ){
             ln[num] = pant.value[num];
         }else{
-            break;
+              signo[0] = pant.value[num];
+              break;
         }
         
     }
@@ -65,8 +68,31 @@ function operar(){
     for(i = 1; i< ln.length;i++){
           a += ln[i] ;
     }
+   
+     ind_Sig = pant.value.indexOf(signo[0]);
+     b = '';
+    for(i= ind_Sig+1 ; i< pant.value.length;i++){
+        b += pant.value[i];
+    }
+
+    switch(signo[0]){
         
-  
+        case '+' :  pant.value = parseFloat(a) + parseFloat(b);
+        break;
+
+        case '-' :  pant.value = parseFloat(a) - parseFloat(b) ;
+        break;
+
+        case '*' :  pant.value = parseFloat(a) * parseFloat(b);
+        break
+
+        case '/' :  pant.value = parseFloat(a) / parseFloat(b) ;
+        break;
+
+        default:  0
+        break
+    }
+
    
 }
 
